@@ -58,13 +58,14 @@
           
           <ul>
 
-            <li v-for="contact in contacts" class="">
+            <li v-for="(contact,index) in contacts" class="">
               <div class="image">
                 <img :src="contact.avatar">
               </div>
               <div class="user">
+                <span id="hours">{{contact.messages[contact.messages.length - 1].date}}</span>
                 <span>{{contact.name}}</span>
-                <span>Ultimo messaggio</span>
+                <span>{{contact.messages[contact.messages.length - 1].message}}</span>
               </div>
             </li>
 

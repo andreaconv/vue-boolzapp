@@ -166,15 +166,6 @@ aside .chats-made ul li{
   border-bottom: 1px solid var(--light-gray);
 }
 
-aside .chats-made ul li::after{
-  content: "15:30";
-  position: absolute;
-  top:8px;
-  right: 10px;
-  font-size: .55rem;
-  color: gray;
-}
-
 aside .chats-made ul li.active{
   background-color: var(--light-gray);
 }
@@ -193,6 +184,16 @@ aside .chats-made ul li .user{
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: relative;
+}
+
+aside .chats-made ul li .user span#hours{
+  content: "15";
+  position: absolute;
+  top:0;
+  right: 0;
+  font-size: .55rem;
+  color: gray;
 }
 
 aside .chats-made ul li .user span:last-child{
@@ -293,24 +294,13 @@ main .content .message{
   position: relative;
 }
 
-main .content .message::after{
-  content: "15:30";
+main .content .message span#hours{
   position: absolute;
   bottom: 4px;
   right: 8px;
   font-size: .55rem;
   color: gray;
 }
-
-/* FIXME: alternativa  */
-
-/* main .content .message span#hours{
-  position: absolute;
-  bottom: 4px;
-  right: 8px;
-  font-size: .55rem;
-  color: gray;
-} */
 
 /* ---------MESSAGGIO INVIATO------ */
 main .content .message.sent{
