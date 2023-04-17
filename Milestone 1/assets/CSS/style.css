@@ -290,7 +290,6 @@ main .content .message{
   max-width: 60%;
   margin: 5px 0;
   padding: 10px 15px;
-  border-radius: 10px;
   position: relative;
 }
 
@@ -304,12 +303,14 @@ main .content .message span#hours{
 
 /* ---------MESSAGGIO INVIATO------ */
 main .content .message.sent{
+  border-radius: 10px 10px 0 10px;
   background-color: #d5f9ba;  
   align-self: end;
 }
 
 /* --------MESSAGGIO RICEVUTO------ */
 main .content .message.received{
+  border-radius: 10px 10px 10px 0;
   background-color: white;
   align-self: start;
 }
