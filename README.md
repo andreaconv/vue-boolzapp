@@ -195,3 +195,8 @@ contacts: [
 ]
 
 ```
+
+## STEPS
+### **Milestone 1**
+1. Creare cartelle html e css e replicare la grafica
+2. Creare file script e aggiungerela lista contatti con un ciclo `v-for`
