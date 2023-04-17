@@ -149,9 +149,65 @@ aside .chats-made{
   width: 100%;
   height: calc(100% - (var(--height-user) + 120px));
   overflow-y: scroll;
-  /* debug */
-  background-color: salmon;
+  background-color: var(--white);
 }
+
+aside .chats-made ul{
+  list-style: none;
+}
+
+aside .chats-made ul li{
+  display: flex;
+  height: 70px;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: var(--white);
+  position: relative;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+aside .chats-made ul li::after{
+  content: "15:30";
+  position: absolute;
+  top:8px;
+  right: 10px;
+  font-size: .55rem;
+  color: gray;
+}
+
+aside .chats-made ul li.active{
+  background-color: var(--light-gray);
+}
+
+aside .chats-made ul li .image{
+  height: 50px;
+  margin-right: 15px;
+}
+
+aside .chats-made ul li .image img{
+  height: 100%;
+  border-radius: 50%;
+}
+
+aside .chats-made ul li .user{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+aside .chats-made ul li .user span:last-child{
+  color: gray;
+  font-size: .7rem;
+  margin-top: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow : ellipsis;
+  display: block;
+  /* FIXME: perché devo dare una larghezza precisa per l'overflow? */
+  width: 250px;
+  /* width: 90%; */
+}
+
 
 /* ------------------MAIN------------------- */
 
