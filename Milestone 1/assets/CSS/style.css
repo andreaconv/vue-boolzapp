@@ -152,7 +152,6 @@ aside .chats-made{
   overflow-y: scroll;
   /* debug */
   background-color: salmon;
-  border: 1px solid black;
 }
 
 /* ------------------MAIN------------------- */
@@ -162,24 +161,66 @@ main{
   flex-direction: column;
   height: 100%;
   width: 65%;
-  /* debug */
-  background-color: aqua;
 }
 
 main > *{
   width: 100%;
 }
 
+/* ------------------HEADER------------------- */
+
 main header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   flex-shrink: 0;
+  width: 100%;
   height: var(--height-user);
-  /* debug */
-  background-color: lightgray;
-  border: 1px solid black;
+  background-color: var(--white);
+  padding: 0 10px;
+  border-left: 1px solid var(--gray);
 }
 
+main header .user{
+  display: flex;
+}
+
+main header .user .avatar{
+  width: 40px;
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+main header .user .avatar img{
+  width: 100%;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+main header .user .status{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: .8rem;
+}
+
+main header .user .status span:last-child{
+  color: gray;
+  font-size: .7rem;
+  margin-top: 3px;
+}
+
+main header .icons i{
+  color: var(--gray);
+  margin: 0 10px;
+  font-size: 1.1rem;
+}
+
+/* ------------------CONTENT------------------- */
+
 main .content{
-  /* width: 100%; */
+  background-image: url(../IMG/mine.jpg);
   height: 100%;
   overflow-y: scroll;
 }
