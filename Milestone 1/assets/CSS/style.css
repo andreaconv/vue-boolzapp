@@ -12,9 +12,89 @@ body {
 :root {
   --green: #009688;
   --gray: #d6dbd7;
+  --white: #cecece;
+  --height-user: 60px;
 }
 
 #app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   background-image: linear-gradient(var(--green) 20%, var(--gray) 20%);
+}
+
+.container{
+  display: flex;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 95%;
+  background-color: var(--white);
+}
+
+aside{
+  height: 100%;
+  width: 35%;
+  }
+
+aside .utilizer{
+  width: 100%;
+  height: var(--height-user);
+  /* debug */
+  background-color: lightgray;
+  border: 1px solid black;
+}
+
+aside nav{
+  width: 100%;
+  height: 120px;
+  /* debug */
+  background-color: lightblue;
+}
+
+aside .chats-made{
+  width: 100%;
+  height: calc(100% - (var(--height-user) + 120px));
+  overflow-y: scroll;
+  /* debug */
+  background-color: salmon;
+  border: 1px solid black;
+}
+
+/* ------------------MAIN------------------- */
+
+main{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 65%;
+  /* debug */
+  background-color: aqua;
+}
+
+main > *{
+  width: 100%;
+}
+
+main header{
+  flex-shrink: 0;
+  height: var(--height-user);
+  /* debug */
+  background-color: lightgray;
+  border: 1px solid black;
+}
+
+main .content{
+  /* width: 100%; */
+  height: 100%;
+  overflow-y: scroll;
+}
+
+main footer{
+  flex-shrink: 0;
+  height: var(--height-user);
+  /* debug */
+  background-color: lightgray;
+  border: 1px solid black;
 }
