@@ -13,7 +13,7 @@ body {
   --green: #009688;
   --light-gray: #d6dbd7; /* sfondo  */
   --gray: #b1b1b1; /* testo*/
-  --white: #e4e4e4; /* sfondo */
+  --white: #ebebeb; /* sfondo */
   --height-user: 60px;
   --heavenly: #8edafc; /* sfondo notifiche*/
 }
@@ -139,7 +139,6 @@ aside nav .search-bar input{
 }
 
 /*FIXME:non funziona il colore del bordo al focus*/
-
 aside nav .search-bar input:focus{
   border: 1px solid var(--heavenly);
 }
@@ -220,14 +219,56 @@ main header .icons i{
 /* ------------------CONTENT------------------- */
 
 main .content{
+  display: flex;
+  flex-direction: column;
   background-image: url(../IMG/mine.jpg);
   height: 100%;
+  width: 100%;
+  padding: 40px 70px;
   overflow-y: scroll;
 }
 
-/* ------------------FOOTER------------------- */
+main .content .message{
+  min-width: 35%;
+  max-width: 60%;
+  margin: 5px 0;
+  padding: 10px 15px;
+  border-radius: 10px;
+  position: relative;
+}
 
-/* TODO:sistemare il footer  */
+main .content .message::after{
+  content: "15:30";
+  position: absolute;
+  bottom: 4px;
+  right: 8px;
+  font-size: .55rem;
+  color: gray;
+}
+
+/* FIXME: alternativa  */
+
+/* main .content .message span#hours{
+  position: absolute;
+  bottom: 4px;
+  right: 8px;
+  font-size: .55rem;
+  color: gray;
+} */
+
+/* ---------MESSAGGIO INVIATO------ */
+main .content .message.sent{
+  background-color: #d5f9ba;  
+  align-self: end;
+}
+
+/* --------MESSAGGIO RICEVUTO------ */
+main .content .message.received{
+  background-color: white;
+  align-self: start;
+}
+
+/* ------------------FOOTER------------------- */
 
 main footer{
   display: flex;
