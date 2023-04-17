@@ -11,8 +11,9 @@ body {
 
 :root {
   --green: #009688;
-  --gray: #d6dbd7;
-  --white: #cecece;
+  --light-gray: #d6dbd7; /* sfondo  */
+  --gray: #b1b1b1; /* testo*/
+  --white: #e4e4e4; /* sfondo */
   --height-user: 60px;
 }
 
@@ -21,7 +22,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
-  background-image: linear-gradient(var(--green) 20%, var(--gray) 20%);
+  background-image: linear-gradient(var(--green) 20%, var(--light-gray) 20%);
 }
 
 .container{
@@ -30,21 +31,48 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   height: 95%;
-  background-color: var(--white);
 }
+
+/* ------------------ASIDE------------------- */
 
 aside{
   height: 100%;
   width: 35%;
-  }
+}
+
+/* ------------------UTILIZER------------------- */
 
 aside .utilizer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   height: var(--height-user);
+  background-color: var(--white);
+  padding: 0 10px;
   /* debug */
-  background-color: lightgray;
   border: 1px solid black;
 }
+
+aside .utilizer .avatar{
+  width: 40px;
+  display: flex;
+  align-items: center;
+}
+
+aside .utilizer .avatar img{
+  width: 100%;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+aside .utilizer .icons i{
+  color: var(--gray);
+  margin: 0 10px;
+  font-size: 1.1rem;
+}
+
+/* ------------------NAV BAR------------------- */
 
 aside nav{
   width: 100%;
@@ -52,6 +80,8 @@ aside nav{
   /* debug */
   background-color: lightblue;
 }
+
+/* ------------------CHAT AVVIATE------------------- */
 
 aside .chats-made{
   width: 100%;
