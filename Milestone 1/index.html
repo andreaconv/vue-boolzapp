@@ -58,32 +58,12 @@
           
           <ul>
 
-            <li class="active">
+            <li v-for="contact in contacts" class="">
               <div class="image">
-                <img src="assets/IMG/avatar/avatar_1.jpg" alt="">
+                <img :src="contact.avatar">
               </div>
               <div class="user">
-                <span>Michele</span>
-                <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel commodi laborum aperiam adipisci consequuntur illo natus ad quis. Nihil fugiat fugit eligendi quia velit nisi expedita ex deserunt alias pariatur.</span>
-              </div>
-            </li>
-
-            <li class="">
-              <div class="image">
-                <img src="assets/IMG/avatar/avatar_1.jpg" alt="">
-              </div>
-              <div class="user">
-                <span>Michele</span>
-                <span>Ultimo messaggio</span>
-              </div>
-            </li>
-
-            <li class="">
-              <div class="image">
-                <img src="assets/IMG/avatar/avatar_1.jpg" alt="">
-              </div>
-              <div class="user">
-                <span>Michele</span>
+                <span>{{contact.name}}</span>
                 <span>Ultimo messaggio</span>
               </div>
             </li>
