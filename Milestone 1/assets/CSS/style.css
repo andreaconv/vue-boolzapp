@@ -178,7 +178,7 @@ main header{
   height: var(--height-user);
   background-color: var(--white);
   padding: 0 10px;
-  border-left: 1px solid var(--gray);
+  border-left: 1px solid var(--light-gray);
 }
 
 main header .user{
@@ -225,10 +225,31 @@ main .content{
   overflow-y: scroll;
 }
 
+/* ------------------FOOTER------------------- */
+
+/* TODO:sistemare il footer  */
+
 main footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   flex-shrink: 0;
+  width: 100%;
   height: var(--height-user);
-  /* debug */
-  background-color: lightgray;
-  border: 1px solid black;
+  background-color: var(--white);
+  padding: 0 30px;
+  border-left: 1px solid var(--light-gray);
+  color: gray;
+}
+
+main footer i{
+  font-size: 1.1rem;
+}
+
+main footer input{
+  width: 100%;
+  margin: 0 15px;
+  padding: 7px 5px;
+  border: 1px solid gray;
+  border-radius: 5px;
 }
