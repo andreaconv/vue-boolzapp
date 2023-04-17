@@ -11,9 +11,9 @@ body {
 
 :root {
   --green: #009688;
-  --light-gray: #d6dbd7; /* sfondo  */
-  --gray: #b1b1b1; /* testo*/
-  --white: #ebebeb; /* sfondo */
+  --light-gray: #a3a3a3; /* sfondo esterno */
+  --gray: #b1b1b1; /* testo icone */
+  --white: #ebebeb; /* sfondo generale*/
   --height-user: 60px;
   --heavenly: #8edafc; /* sfondo notifiche*/
 }
@@ -167,7 +167,7 @@ aside .chats-made ul li{
 }
 
 aside .chats-made ul li.active{
-  background-color: var(--light-gray);
+  background-color: #d8d8d8;
 }
 
 aside .chats-made ul li .image{
@@ -188,7 +188,7 @@ aside .chats-made ul li .user{
 }
 
 aside .chats-made ul li .user span#hours{
-  content: "15";
+  content: "";
   position: absolute;
   top:0;
   right: 0;
