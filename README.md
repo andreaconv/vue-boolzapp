@@ -204,3 +204,8 @@ contacts: [
 1. Agire nel `main .content` e creare un ciclo `v-for` per inserire i messaggi e poterli visualizzare
 2. Utilizzando l'indice e lo status dei messaggi inserire la classe relativa al messaggio per distinguere se è stato inviato o ricevuto
 3. Agire nel `aside .chats-made` ed utilizzare l'indice del ciclo per cambiare la visualizzazine delle chat come abbiamo fatto per l'esercizio dello slider
+
+### **Milestone 3**
+1. Agire nel camput `input` "Scrivi un messaggio" e come nell'esercizio **todolist** prendere il testo inserito e pusharlo nell'array dei messaggi
+2. Sistemare l'orario del messaggio inviato con luxon
+3. Creare un messaggio preimpostato che si genererà ad ogni messaggio inviato con un setTimeout dopo un secondo
