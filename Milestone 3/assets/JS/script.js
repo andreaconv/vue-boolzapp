@@ -204,8 +204,16 @@ createApp({
         'perché?',
         'non ci siamo',
         'papà?',
+        'nonna',
         'stai bene?',
         'non sono daccordo',
+        'bello!',
+        'pane tostato',
+        'barbabietole da zucchero',
+        'fotosintesi clorofilliana',
+        'industrie siderurgiche',
+        'bergamotto',
+        'adolescenti',
       ],
 
     }
@@ -215,51 +223,55 @@ createApp({
   methods: { //FUNZIONI
 
     // genera l'ora e la data attuale 
-
-    printClock(){
+    printClock() {
       this.data = dt.now().toLocaleString(dt.DATE_SHORT)
       this.ora = dt.now().toLocaleString(dt.TIME_24_SIMPLE)
     },
-
-    generateNumberRandom(max,min){
-    return Math.floor(Math.random() * (max - min + 1) + min);
+    //genera un numero random
+    generateNumberRandom(max, min) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    },
+    // prende una stringa e trasforma la prima lettera in maiuscolo 
+    capitalizeFirstLetter(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
     },
     
-    addMessage(){
-
+    addMessage() {
+      
       // funzioni richiamate
       this.printClock();
 
-      if(this.inputMessage.length === 0){
+      if (this.inputMessage.length === 0) {
         console.log("devi scrivere qualcosa")
-      }else{
+      } else {
         const newMsg = {
           date: this.data,
           // date: '10/01/2020',
           time: this.ora,
           // time: '15:30',
-          message: this.inputMessage,
+          message: this.capitalizeFirstLetter(this.inputMessage),
           status: 'sent'
         }
         this.contacts[this.counter].messages.push(newMsg);
-        this.inputMessage= '';
+        this.inputMessage = '';
 
         // funzioni richiamate
         this.answer();
-        
+
       }
     },
 
     // genera la risposta 
 
-    answer(){
+    answer() {
       setTimeout(() => {
         const risposta = {
           date: this.data,
           // date: '10/01/2020',
           time: this.ora,
           // time: '15:30',
-          message: this.arrayAnswers[this.generateNumberRandom(this.arrayAnswers.length - 1,0)],
+          message: this.capitalizeFirstLetter(this.arrayAnswers[this.generateNumberRandom(this.arrayAnswers.length - 1, 0)]),
+          //FIXME: la prima funzione mi trasforma la prima lettera in maiuscolo, prendo il messaggio dall'array di risposte con indice random grazie ad un'altra funzione
           // message: 'ok',
           status: 'received'
         }
