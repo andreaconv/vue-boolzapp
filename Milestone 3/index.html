@@ -133,7 +133,7 @@
           <i class="fa-regular fa-face-smile"></i>
 
           <input
-            v-model="inputMessage"
+            v-model.trim="inputMessage"
             @keydown.enter="addMessage"
             type="text"
             placeholder="Scrivi un messaggio">
