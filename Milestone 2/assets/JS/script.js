@@ -167,7 +167,8 @@ createApp({
             }
           ],
         }
-      ]
+      ],
+      counter: 1,
 
     }
 

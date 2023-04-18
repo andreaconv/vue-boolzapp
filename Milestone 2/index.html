@@ -89,12 +89,13 @@
 
             <div class="avatar">
 
-              <img src="assets/IMG/avatar/avatar_1.jpg" alt="">
+              <!-- <img src="assets/IMG/avatar/avatar_1.jpg" alt=""> -->
+              <img :src="contacts[counter].avatar">
   
             </div>
   
             <div class="status">
-              <span>Michele</span>
+              <span>{{contacts[counter].name}}</span>
               <span>Ultimo accesso oggi alle 12:00</span>
             </div>
 
