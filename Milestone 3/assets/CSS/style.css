@@ -1,0 +1,356 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  height: 100vh;
+}
+
+/* TODO: CAMBIARE I NOMI ALLE TONALITÀ DEL GRIGIO  */
+
+:root {
+  --green: #009688;
+  --light-gray: #a3a3a3; /* sfondo esterno */
+  --gray: #b1b1b1; /* testo icone */
+  /* --DARK-gray: #b1b1b1; */
+  --white: #ebebeb; /* sfondo generale*/
+  --height-user: 60px;
+  --heavenly: #8edafc; /* sfondo notifiche*/
+}
+
+i{
+  cursor: pointer;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-image: linear-gradient(var(--green) 15%, var(--light-gray) 15%);
+}
+
+.container{
+  display: flex;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 95%;
+}
+
+/* ------------------ASIDE------------------- */
+
+aside{
+  height: 100%;
+  width: 35%;
+}
+
+/* ------------------UTILIZER------------------- */
+
+aside .utilizer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: var(--height-user);
+  background-color: var(--white);
+  padding: 0 10px;
+}
+
+aside .utilizer .avatar{
+  width: 40px;
+  display: flex;
+  align-items: center;
+}
+
+aside .utilizer .avatar img{
+  width: 100%;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+aside .utilizer .icons i{
+  color: var(--gray);
+  margin: 0 10px;
+  font-size: 1.1rem;
+}
+
+/* ------------------NAV BAR------------------- */
+
+aside nav{
+  width: 100%;
+  height: 120px;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--light-gray);
+}
+
+aside nav .notifications{
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 60%;
+  background-color: var(--heavenly);
+}
+
+aside nav .notifications i{
+  background-color: white;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  padding: 12px;
+  color: var(--heavenly);
+  margin-right: 10px;
+}
+
+aside nav .notifications .status{
+  display: flex;
+  flex-direction: column;
+  font-size: .8rem;
+}
+
+aside nav .notifications .status span:last-child{
+  color: gray;
+  text-decoration: underline;
+  font-size: .7rem;
+  margin-top: 5px;
+}
+
+aside nav .search-bar{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40%;
+  color: gray;
+  padding: 0 15px;
+}
+
+aside nav .search-bar i{
+  margin-right: 15px;
+  padding: 7px 20px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  background-color: white;
+}
+
+aside nav .search-bar input{
+  width: 100%;
+  padding: 7px 5px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+/*FIXME:non funziona il colore del bordo al focus*/
+aside nav .search-bar input:focus{
+  border: 1px solid var(--heavenly);
+}
+
+/* ------------------CHAT AVVIATE------------------- */
+
+aside .chats-made{
+  width: 100%;
+  height: calc(100% - (var(--height-user) + 120px));
+  overflow-y: scroll;
+  background-color: var(--white);
+}
+
+aside .chats-made ul{
+  list-style: none;
+}
+
+aside .chats-made ul li{
+  display: flex;
+  height: 70px;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: var(--white);
+  position: relative;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+aside .chats-made ul li.active{
+  background-color: #d8d8d8;
+}
+
+aside .chats-made ul li:hover{
+  background-color: #fafafa;
+}
+
+aside .chats-made ul li .image{
+  height: 50px;
+  margin-right: 15px;
+}
+
+aside .chats-made ul li .image img{
+  height: 100%;
+  border-radius: 50%;
+}
+
+aside .chats-made ul li .user{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+aside .chats-made ul li .user span#hours{
+  content: "";
+  position: absolute;
+  top:0;
+  right: 0;
+  font-size: .55rem;
+  color: gray;
+}
+
+aside .chats-made ul li .user span:last-child{
+  color: gray;
+  font-size: .7rem;
+  margin-top: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow : ellipsis;
+  display: block;
+  /* FIXME: perché devo dare una larghezza precisa per l'overflow? */
+  width: 250px;
+  /* width: 90%; */
+}
+
+
+/* ------------------MAIN------------------- */
+
+main{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 65%;
+}
+
+main > *{
+  width: 100%;
+}
+
+/* ------------------HEADER------------------- */
+
+main header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 100%;
+  height: var(--height-user);
+  background-color: var(--white);
+  padding: 0 10px;
+  border-left: 1px solid var(--light-gray);
+}
+
+main header .user{
+  display: flex;
+}
+
+main header .user .avatar{
+  width: 40px;
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+main header .user .avatar img{
+  width: 100%;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+main header .user .status{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: .8rem;
+}
+
+main header .user .status span:last-child{
+  color: gray;
+  font-size: .7rem;
+  margin-top: 3px;
+}
+
+main header .icons i{
+  color: var(--gray);
+  margin: 0 10px;
+  font-size: 1.1rem;
+}
+
+/* ------------------CONTENT------------------- */
+
+main .content{
+  display: flex;
+  flex-direction: column;
+  background-image: url(../IMG/mine.jpg);
+  height: 100%;
+  width: 100%;
+  padding: 40px 70px;
+  overflow-y: scroll;
+}
+
+main .content .message{
+  min-width: 35%;
+  max-width: 60%;
+  margin: 5px 0;
+  padding: 5px 35px 5px 15px;
+  position: relative;
+  /* debug */
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow : ellipsis;
+  display: block; */
+}
+
+main .content .message span.hours{
+  position: absolute;
+  bottom: 4px;
+  right: 8px;
+  font-size: .55rem;
+  color: gray;
+}
+
+/* ---------MESSAGGIO INVIATO------ */
+main .content .message.sent{
+  border-radius: 10px 10px 0 10px;
+  background-color: #d5f9ba;  
+  align-self: end;
+}
+
+/* --------MESSAGGIO RICEVUTO------ */
+main .content .message.received{
+  border-radius: 10px 10px 10px 0;
+  background-color: white;
+  align-self: start;
+}
+
+/* ------------------FOOTER------------------- */
+
+main footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 100%;
+  height: var(--height-user);
+  background-color: var(--white);
+  padding: 0 30px;
+  border-left: 1px solid var(--light-gray);
+  color: gray;
+}
+
+main footer i{
+  font-size: 1.1rem;
+}
+
+main footer input{
+  width: 100%;
+  margin: 0 15px;
+  padding: 7px 5px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}

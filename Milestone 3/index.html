@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- FONT AWESOME  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- VUE -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <!-- CSS  -->
+  <link rel="stylesheet" href="assets/CSS/style.css">
+  <!-- ICON -->
+  <link rel="icon" href="assets/IMG/comment-sms-solid.svg">
+  <title>Boolzapp</title>
+</head>
+<body>
+
+  <div id="app">
+
+    <div class="container">
+
+      <!------------------BARRA LATERALE-------------------->
+
+      <aside>
+
+        <div class="utilizer">
+
+          <div class="avatar">
+
+            <img src="assets/IMG/avatar/avatar_io.jpg" alt="">
+
+            <span>Ciccillo</span>
+
+          </div>
+
+          <div class="icons">
+            <i class="fa-sharp fa-solid fa-circle-notch"></i>
+            <i class="fa-solid fa-message"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+
+        </div>
+
+        <nav>
+          <div class="notifications">
+            <i class="fa-solid fa-bell-slash"></i>
+            <div class="status">
+              <span>Ricevi notifiche di nuovi messaggi</span>
+              <span>Attiva notifiche desktop</span>
+            </div>
+          </div>
+          <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Cerca o inizia una nuova chat">
+          </div>
+        </nav>
+
+        <!-----------------LISTA CHAT EFFETTUATE------------>
+
+        <div class="chats-made">
+          
+          <ul>
+
+            <li
+              v-for="(contact,index) in contacts"
+              @click="counter = index"
+              :class="{'active' : index === counter}">
+              <div class="image">
+                <img :src="contact.avatar">
+              </div>
+              <div class="user">
+                <span id="hours">{{contact.messages[contact.messages.length - 1].date}}</span>
+                <span>{{contact.name}}</span>
+                <span>{{contact.messages[contact.messages.length - 1].message}}</span>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </aside>
+
+      <!------------------LATO DESTRO -------------------->
+      
+      <main>
+
+        <header>
+
+          <div class="user">
+
+            <div class="avatar">
+
+              <img :src="contacts[counter].avatar">
+  
+            </div>
+            
+            <div class="status">
+              <span>{{contacts[counter].name}}</span>
+              <span>Ultimo accesso oggi alle 12:00</span>
+            </div>
+            
+          </div>
+          
+          <div class="icons">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-paperclip"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+          
+        </header>
+        
+        <!------------------CHAT CENTRALE-------------------->
+        
+        <div class="content">
+          <div
+          v-for="contact in contacts[counter].messages"
+          :class="contact.status"
+          class="message">
+
+              <span>{{contact.message}}</span>
+              
+              <span class="hours">{{contact.time}}</span>
+            </div>
+
+        </div>
+
+        <!------------------CHAT CENTRALE-------------------->
+
+        <footer>
+
+          <i class="fa-regular fa-face-smile"></i>
+
+          <input type="text" placeholder="Scrivi un messaggio">
+
+          <i class="fa-solid fa-microphone"></i>
+
+        </footer>
+
+      </main>
+
+    </div>
+
+  </div>
+  
+  <script src="assets/JS/script.js"></script>
+</body>
+</html>
