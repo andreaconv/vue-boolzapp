@@ -1,5 +1,7 @@
 const { createApp } = Vue;
 
+const dt = luxon.DateTime;
+
 createApp({
 
   data() {
@@ -191,27 +193,59 @@ createApp({
       ],
       counter: 0,
       inputMessage: '',
+      data: null,
+      ora: null,
+      arrayAnswers: [
+        'va bene',
+        'daccordo',
+        'perfetto',
+        'ci sto',
+        'benissimo',
+        'perché?',
+        'non ci siamo',
+        'papà?',
+        'stai bene?',
+        'non sono daccordo',
+      ],
 
     }
 
   },
 
   methods: { //FUNZIONI
+
+    // genera l'ora e la data attuale 
+
+    printClock(){
+      this.data = dt.now().toLocaleString(dt.DATE_SHORT)
+      this.ora = dt.now().toLocaleString(dt.TIME_24_SIMPLE)
+    },
+
+    generateNumberRandom(max,min){
+    return Math.floor(Math.random() * (max - min + 1) + min);
+    },
     
     addMessage(){
+
+      // funzioni richiamate
+      this.printClock();
+
       if(this.inputMessage.length === 0){
         console.log("devi scrivere qualcosa")
       }else{
         const newMsg = {
-          date: '10/01/2020',
-          time: '15:30',
+          date: this.data,
+          // date: '10/01/2020',
+          time: this.ora,
+          // time: '15:30',
           message: this.inputMessage,
           status: 'sent'
         }
         this.contacts[this.counter].messages.push(newMsg);
         this.inputMessage= '';
 
-        this.answer()
+        // funzioni richiamate
+        this.answer();
         
       }
     },
@@ -221,9 +255,12 @@ createApp({
     answer(){
       setTimeout(() => {
         const risposta = {
-          date: '10/01/2020',
-          time: '15:30',
-          message: 'ok',
+          date: this.data,
+          // date: '10/01/2020',
+          time: this.ora,
+          // time: '15:30',
+          message: this.arrayAnswers[this.generateNumberRandom(this.arrayAnswers.length - 1,0)],
+          // message: 'ok',
           status: 'received'
         }
         this.contacts[this.counter].messages.push(risposta);

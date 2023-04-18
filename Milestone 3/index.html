@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- FONT AWESOME  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- LUXON  -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/luxon/3.3.0/luxon.min.js' integrity='sha512-KKbQg5o92MwtJKR9sfm/HkREzfyzNMiKPIQ7i7SZOxwEdiNCm4Svayn2DBq7MKEdrqPJUOSIpy1v6PpFlCQ0YA==' crossorigin='anonymous'></script>
   <!-- VUE -->
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <!-- CSS  -->
@@ -70,7 +72,7 @@
                 <img :src="contact.avatar">
               </div>
               <div class="user">
-                <span id="hours">{{contact.messages[contact.messages.length - 1].date}}</span>
+                <span id="hours">{{contact.messages[contact.messages.length - 1].date}} {{contact.messages[contact.messages.length - 1].time}}</span>
                 <span>{{contact.name}}</span>
                 <span>{{contact.messages[contact.messages.length - 1].message}}</span>
               </div>
