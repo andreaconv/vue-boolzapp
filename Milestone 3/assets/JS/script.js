@@ -210,8 +210,33 @@ createApp({
         }
         this.contacts[this.counter].messages.push(newMsg);
         this.inputMessage= '';
+
+        // answer()
+
+        setTimeout(() => {
+          const risposta = {
+            date: '10/01/2020',
+            time: '15:30',
+            message: 'ok',
+            status: 'received'
+          }
+          this.contacts[this.counter].messages.push(risposta);
+        }, 1000);
+        
       }
-    }
+    },
+
+    // answer(){
+    //   setTimeout(() => {
+    //     const risposta = {
+    //       date: '10/01/2020',
+    //       time: '15:30',
+    //       message: 'ok',
+    //       status: 'received'
+    //     }
+    //     this.contacts[this.counter].messages.push(risposta);
+    //   }, 1000);
+    // },
 
   },
 
