@@ -126,13 +126,17 @@
 
         </div>
 
-        <!------------------CHAT CENTRALE-------------------->
+        <!----------------INPUT NUOVO MESSAGGIO-------------->
 
         <footer>
 
           <i class="fa-regular fa-face-smile"></i>
 
-          <input type="text" placeholder="Scrivi un messaggio">
+          <input
+            v-model="inputMessage"
+            @keydown.enter="addMessage"
+            type="text"
+            placeholder="Scrivi un messaggio">
 
           <i class="fa-solid fa-microphone"></i>
 

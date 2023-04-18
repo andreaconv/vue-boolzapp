@@ -190,13 +190,29 @@ createApp({
         }
       ],
       counter: 0,
+      inputMessage: '',
 
     }
 
   },
 
-  methods: {
-    //FUNZIONI
+  methods: { //FUNZIONI
+    
+    addMessage(){
+      if(this.inputMessage.length === 0){
+        console.log("devi scrivere qualcosa")
+      }else{
+        const newMsg = {
+          date: '10/01/2020',
+          time: '15:30',
+          message: this.inputMessage,
+          status: 'sent'
+        }
+        this.contacts[this.counter].messages.push(newMsg);
+        this.inputMessage= '';
+      }
+    }
+
   },
 
   mounted() {
