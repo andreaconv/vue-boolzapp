@@ -209,3 +209,8 @@ contacts: [
 1. Agire nel camput `input` "Scrivi un messaggio" e come nell'esercizio **todolist** prendere il testo inserito e pusharlo nell'array dei messaggi
 2. Sistemare l'orario del messaggio inviato con luxon
 3. Creare un messaggio preimpostato che si genererà ad ogni messaggio inviato con un setTimeout dopo un secondo
+
+### **Milestone 4**
+>OSSERVAZIONI: 
+
+la richiesta è: _scrivendo qualcosa nell’input, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite_ ma di default i contatti vengono visualizzati tutti e nello script oer oggi contatto abbiamo una proprietà `visible: true,` perciò mi viene da pensare che utilizzando un `v-if` all'elemento della lista potremmo visualizzarli solo quando le lettere inserite nel campo di input combaciano col nome. Per far combaciare le lettere inserite col nome dei contatti **FORSE** devo scomporre tutti i nomi in singole lettere `(come l'esercizio delle parole palindrome)` e se le lettere inserite combaciano con queste singole lettere allora rendo l'elemento visibile
