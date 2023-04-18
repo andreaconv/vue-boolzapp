@@ -262,14 +262,12 @@ main header .user .avatar img{
   margin-right: 10px;
 }
 
-main header .user .status{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+main header .user .details{
+  padding: 5px 0;
   font-size: .8rem;
 }
 
-main header .user .status span:last-child{
+main header .user .details .status{
   color: gray;
   font-size: .7rem;
   margin-top: 3px;
@@ -292,6 +290,8 @@ main .content{
   padding: 40px 70px;
   overflow-y: scroll;
 }
+
+/* TODO: trovare il modo per far visualizzare gli ultimi messaggi quando se ne inseriscono troppi */
 
 main .content .message{
   /* min-width: 35%; */

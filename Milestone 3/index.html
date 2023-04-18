@@ -98,9 +98,10 @@
   
             </div>
             
-            <div class="status">
-              <span>{{contacts[counter].name}}</span>
-              <span>Ultimo accesso oggi alle 12:00</span>
+            <div class="details">
+              <div>{{contacts[counter].name}}</div>
+              <span class="status">Ultimo accesso {{contacts[counter].messages[contacts[counter].messages.length - 1].date}} alle {{contacts[counter].messages[contacts[counter].messages.length - 1].time}}</span>
+
             </div>
             
           </div>
