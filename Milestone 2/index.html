@@ -82,8 +82,8 @@
 
       </aside>
 
-      <!------------------CHAT CENTRALE-------------------->
-
+      <!------------------LATO DESTRO -------------------->
+      
       <main>
 
         <header>
@@ -95,29 +95,29 @@
               <img :src="contacts[counter].avatar">
   
             </div>
-  
+            
             <div class="status">
               <span>{{contacts[counter].name}}</span>
               <span>Ultimo accesso oggi alle 12:00</span>
             </div>
-
+            
           </div>
-
+          
           <div class="icons">
             <i class="fa-solid fa-magnifying-glass"></i>
             <i class="fa-solid fa-paperclip"></i>
             <i class="fa-solid fa-ellipsis-vertical"></i>
           </div>
-
+          
         </header>
-
-
+        
+        <!------------------CHAT CENTRALE-------------------->
         
         <div class="content">
           <div
-              v-for="contact in contacts[counter].messages"
-              :class="contact.status"
-              class="message">
+          v-for="contact in contacts[counter].messages"
+          :class="contact.status"
+          class="message">
 
               <span>{{contact.message}}</span>
               
@@ -125,6 +125,8 @@
             </div>
 
         </div>
+
+        <!------------------CHAT CENTRALE-------------------->
 
         <footer>
 
