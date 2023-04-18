@@ -62,7 +62,10 @@
           
           <ul>
 
-            <li v-for="(contact,index) in contacts" class="">
+            <li
+              v-for="(contact,index) in contacts"
+              @click="counter = index"
+              :class="{'active' : index === counter}">
               <div class="image">
                 <img :src="contact.avatar">
               </div>
@@ -89,7 +92,6 @@
 
             <div class="avatar">
 
-              <!-- <img src="assets/IMG/avatar/avatar_1.jpg" alt=""> -->
               <img :src="contacts[counter].avatar">
   
             </div>
@@ -109,18 +111,19 @@
 
         </header>
 
-        <!-- TODO: aggiungere un ciclo per inserire i messaggi  -->
-
-        <!-- FIXME: PER AGGIUNGERE LA CLASSE SE RICEVUTO O INVIATO  -->
-        <!-- :class="contacts[0].messages[0].status"  -->
-
+        
+        
         <div class="content">
-            <div class="message sent">
-              inviato 
-              <span id="hours">15:30</span>
+          <div
+              v-for="contact in contacts[counter].messages"
+              :class="contact.status"
+              class="message">
+
+              <span>{{contact.message}}</span>
+              
+              <span class="hours">15:30</span>
             </div>
-            <div class="message sent">inviato</div>
-            <div class="message received">ricevuto</div>
+
         </div>
 
         <footer>

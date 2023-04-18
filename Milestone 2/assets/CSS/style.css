@@ -297,11 +297,16 @@ main .content .message{
   min-width: 35%;
   max-width: 60%;
   margin: 5px 0;
-  padding: 10px 15px;
+  padding: 5px 35px 5px 15px;
   position: relative;
+  /* debug */
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow : ellipsis;
+  display: block; */
 }
 
-main .content .message span#hours{
+main .content .message span.hours{
   position: absolute;
   bottom: 4px;
   right: 8px;
