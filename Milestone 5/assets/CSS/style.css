@@ -311,6 +311,8 @@ main .content{
   width: 100%;
   padding: 40px 70px;
   overflow-y: scroll;
+  /* FIXME: SCROLLA LENTAMENTE */
+  scroll-behavior: smooth;
 }
 
 main .content .message{
@@ -320,6 +322,7 @@ main .content .message{
   padding: 5px 35px 5px 15px;
   position: relative;
   /* FIXME: COME POSSO MANDARE A CAPO UNA PAROLA LUNGHISSIMA CHE MI OCCUPA TANTO SPAZIO E VA OLTRE I LIMITI?  */
+  word-wrap: break-word;
   /* TRUNCATE CSS */
   /* white-space: nowrap;
   overflow: hidden;
