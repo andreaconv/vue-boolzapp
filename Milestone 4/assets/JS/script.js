@@ -225,17 +225,18 @@ createApp({
 
     search(){
 
-      console.log(this.searchChat)
-
-      // return
-
       this.contacts.forEach((contact) => {
-        
-        if(contact.name.includes(this.searchChat)){
+
+        if(this.searchChat.length === 0){
           contact.visible = true
         }else{
-          contact.visible = false
+          if(contact.name.toLowerCase().includes(this.searchChat.toLowerCase())){
+            contact.visible = true
+          }else{
+            contact.visible = false
+          }
         }
+        
       })
 
     },
