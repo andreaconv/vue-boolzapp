@@ -196,6 +196,7 @@ createApp({
       data: null,
       ora: null,
       searchChat: "",
+      chevron: false,
       arrayAnswers: [
         'va bene',
         'daccordo',

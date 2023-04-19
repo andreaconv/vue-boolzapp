@@ -202,10 +202,10 @@ aside .chats-made ul li .user .items{
 
 /* TODO: trovare una soluzione per non far scomparire l'orario quando si rimpicciolisce la pagina */
 
-aside .chats-made ul li .user .items span#name{
-  /* background-color: green; */
-  /* flex-shrink: 0; */
-}
+/* aside .chats-made ul li .user .items span#name{
+  background-color: green;
+  flex-shrink: 0;
+} */
 
 aside .chats-made ul li .user .items span#hours{
   font-size: .55rem;
@@ -314,6 +314,52 @@ main .content .message{
   overflow: hidden;
   text-overflow : ellipsis;
   display: block; */
+}
+
+main .content .message span i{
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  font-size: 0.6rem;
+  color: gray;
+  display: none;
+}
+
+main .content .message:hover span i{
+  display: block;
+}
+
+main .content .message ul{
+  /* display: none; */
+  list-style: none;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 2px 2px var(--gray);
+  background-color: var(--white);
+  position: absolute;
+  top: 14px;
+  right: 6px;
+  z-index: 1;
+}
+
+/* main .content .message ul.active{
+  display: block;
+} */
+
+/* TODO: al click della chevron aggiungo dispaly block  */
+
+/* main .content .message:hover ul{
+  display: block;
+}  */
+
+main .content .message ul li{
+  padding: 10px;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+main .content .message ul li:hover{
+  background-color: white;
 }
 
 main .content .message span.hours{

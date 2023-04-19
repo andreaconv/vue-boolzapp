@@ -132,6 +132,15 @@
           class="message">
 
               <span>{{contact.message}}</span>
+
+              <span><i @click="chevron = !chevron" class="fa-solid fa-chevron-down"></i></span>
+
+              <!-- TODO: toggle sul messaggio selezionato  -->
+
+              <ul v-show="chevron" class="menu">
+                <li>Message info</li>
+                <li>Delete message</li>
+              </ul>
               
               <span class="hours">{{contact.time}}</span>
             </div>
