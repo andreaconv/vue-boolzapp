@@ -214,3 +214,7 @@ contacts: [
 >OSSERVAZIONI: 
 
 la richiesta è: _scrivendo qualcosa nell’input, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite_ ma di default i contatti vengono visualizzati tutti e nello script per ogni contatto abbiamo una proprietà `visible: true,` perciò mi viene da pensare che utilizzando un `v-if` all'elemento della lista potremmo visualizzarli solo quando le lettere inserite nel campo di input combaciano col nome. Per far combaciare le lettere inserite col nome dei contatti **FORSE** devo scomporre tutti i nomi in singole lettere `(come l'esercizio delle parole palindrome)` e se le lettere inserite combaciano con queste singole lettere allora rendo l'elemento visibile
+
+1. Ho aggiunto il `v-show="contact.visible"` sotto al ciclo degli elementi generati nella lista dei contatti sulla sinistra per renderli visibili, cambianfo il booleano `visible` in `false` il contatto non viene visualizzato
+2. L'input di ricerca ha un `v-model` che è collegato ad un `data` nello `script`
+3. Ho creato una funzione che viene richiamata al `keyup` nel campo input di ricerca. Questa funzione cicla tutti i contatti nell'array `contacts` e controlla se il `v-model` (che sarebbe il campo di input inserito) è incluso nel nome dei contatti allora il booleano che rende visibile il contatto è true.
