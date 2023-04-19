@@ -218,3 +218,8 @@ la richiesta è: _scrivendo qualcosa nell’input, vengono visualizzati solo i c
 1. Ho aggiunto il `v-show="contact.visible"` sotto al ciclo degli elementi generati nella lista dei contatti sulla sinistra per renderli visibili, cambianfo il booleano `visible` in `false` il contatto non viene visualizzato
 2. L'input di ricerca ha un `v-model` che è collegato ad un `data` nello `script`
 3. Ho creato una funzione che viene richiamata al `keyup` nel campo input di ricerca. Questa funzione cicla tutti i contatti nell'array `contacts` e controlla se il `v-model` (che sarebbe il campo di input inserito) è incluso nel nome dei contatti allora il booleano che rende visibile il contatto è true.
+
+### **Milestone 5**
+1. Devo inserire chevron nell'HTML e il menu a tendina e modificare il CSS a riguardo
+2. Con una funzione al click della chevron il menu a tendina si aprirà
+3. Con un altra funzione al click sulla scritta _delete mesage_ l'intero messaggio si deve cancellare **FORSE** come abbiamo fatto nella todolist che al click sulla crocetta la riga spariva e veniva cancellata del tutto
