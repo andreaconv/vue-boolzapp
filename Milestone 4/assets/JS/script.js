@@ -223,6 +223,23 @@ createApp({
 
   methods: { //FUNZIONI
 
+    search(){
+
+      console.log(this.searchChat)
+
+      // return
+
+      this.contacts.forEach((contact) => {
+        
+        if(contact.name.includes(this.searchChat)){
+          contact.visible = true
+        }else{
+          contact.visible = false
+        }
+      })
+
+    },
+
     // genera l'ora e la data attuale 
     printClock() {
       this.data = dt.now().toLocaleString(dt.DATE_SHORT)
@@ -284,18 +301,22 @@ createApp({
 
   computed:{
 
-    search(){
+    // search(){
 
-      this.contacts.forEach((contact) => {
+    //   console.log(this.searchChat)
+
+    //   // return
+
+    //   this.contacts.forEach((contact) => {
         
-        if(contact.name.includes(this.searchChat)){
-          contact.visible = true
-        }else{
-          contact.visible = false
-        }
-      })
+    //     if(contact.name.includes(this.searchChat)){
+    //       contact.visible = true
+    //     }else{
+    //       contact.visible = false
+    //     }
+    //   })
 
-    }
+    // }
     
   },
   

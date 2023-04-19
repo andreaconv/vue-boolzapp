@@ -54,7 +54,7 @@
           </div>
           <div class="search-bar">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input v-model="searchChat" type="text" placeholder="Cerca o inizia una nuova chat">
+            <input v-model="searchChat" @keydown="search" type="text" placeholder="Cerca o inizia una nuova chat">
           </div>
         </nav>
 
@@ -66,10 +66,11 @@
             
             <li
               v-for="(contact,index) in contacts"
+              v-show="contact.visible"
               @click="counter = index"
               :class="{'active' : index === counter}">
 
-              <div v-if="contact.visible" class="items">
+              <div class="items">
                 <!-- contenitore che si visualizza se il contatto è true  -->
 
                 <div class="image">

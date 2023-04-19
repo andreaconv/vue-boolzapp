@@ -170,7 +170,7 @@ aside .chats-made ul li .items{
   width: 100%;
   padding: 10px 15px;
   background-color: var(--white);
-  position: relative;
+  /* position: relative; */
   border-bottom: 1px solid var(--light-gray);
 }
 
@@ -197,6 +197,7 @@ aside .chats-made ul li .items .user{
   flex-direction: column;
   width: 100%;
   position: relative;
+  background-color: yellowgreen;
 }
 
 aside .chats-made ul li .user span#hours{
