@@ -225,6 +225,7 @@ createApp({
 
   methods: { //FUNZIONI
 
+    //cerca l'utente nelle chat
     search(){
 
       this.contacts.forEach(contact => {
@@ -258,7 +259,7 @@ createApp({
     
     addMessage() {
       
-      // funzioni richiamate
+      // funzioni richiamata
       this.printClock();
 
       if (this.inputMessage.length === 0) {
@@ -279,17 +280,12 @@ createApp({
         // funzioni richiamate
         this.answer();
 
-        /* FIXME: trovare il modo per far visualizzare gli ultimi messaggi quando se ne inseriscono troppi */
-        setTimeout(() => {
-          const content = document.querySelector('.content');
-          content.scrollTop = content.scrollHeight;
-        }, 1);
+        this.scrollContent();
 
       }
     },
 
     // genera la risposta 
-
     answer() {
       setTimeout(() => {
         const risposta = {
@@ -304,38 +300,21 @@ createApp({
           status: 'received'
         }
         this.contacts[this.counter].messages.push(risposta);
-
-        /* FIXME: trovare il modo per far visualizzare gli ultimi messaggi quando se ne inseriscono troppi */
-        setTimeout(() => {
-          const content = document.querySelector('.content');
-          content.scrollTop = content.scrollHeight;
-        }, 1);
+      
+        // funzioni richiamata
+        this.scrollContent();
         
-
       }, 1000);
     },
 
-  },
+    /* FIXME: questa funzione visualizzara gli ultimi messaggi quando se ne inseriscono troppi */
+    scrollContent(){
+      setTimeout(() => {
+        const content = document.querySelector('.content');
+        content.scrollTop = content.scrollHeight;
+      }, 1);
+    }
 
-  computed:{
-
-    // search(){
-
-    //   console.log(this.searchChat)
-
-    //   // return
-
-    //   this.contacts.forEach((contact) => {
-        
-    //     if(contact.name.includes(this.searchChat)){
-    //       contact.visible = true
-    //     }else{
-    //       contact.visible = false
-    //     }
-    //   })
-
-    // }
-    
   },
   
   mounted() {

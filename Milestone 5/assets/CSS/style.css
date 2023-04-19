@@ -51,6 +51,7 @@ i{
   max-width: 1200px;
   margin: 0 auto;
   height: 95%;
+  box-shadow: 2px 2px 15px var(--gray);
 }
 
 /* ------------------ASIDE------------------- */
@@ -344,7 +345,8 @@ main .content .message ul{
   font-size: 0.8rem;
   border-radius: 5px;
   overflow: hidden;
-  box-shadow: 2px 2px var(--gray);
+  width: 110px;
+  box-shadow: 2px 2px 5px var(--gray);
   background-color: var(--white);
   position: absolute;
   top: 14px;
