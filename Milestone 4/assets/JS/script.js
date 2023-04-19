@@ -195,7 +195,7 @@ createApp({
       inputMessage: '',
       data: null,
       ora: null,
-      search: "",
+      searchChat: "",
       arrayAnswers: [
         'va bene',
         'daccordo',
@@ -283,13 +283,24 @@ createApp({
   },
 
   computed:{
-    ricerca(){
-      return this.search.toUpperCase();
-    }
-  },
 
+    search(){
+
+      this.contacts.forEach((contact) => {
+        
+        if(contact.name.includes(this.searchChat)){
+          contact.visible = true
+        }else{
+          contact.visible = false
+        }
+      })
+
+    }
+    
+  },
+  
   mounted() {
     console.log("vue funziona")
   }
-
+  
 }).mount('#app')
