@@ -195,6 +195,7 @@ createApp({
       inputMessage: '',
       data: null,
       ora: null,
+      search: "",
       arrayAnswers: [
         'va bene',
         'daccordo',
@@ -279,6 +280,12 @@ createApp({
       }, 1000);
     },
 
+  },
+
+  computed:{
+    ricerca(){
+      return this.search.toUpperCase();
+    }
   },
 
   mounted() {
