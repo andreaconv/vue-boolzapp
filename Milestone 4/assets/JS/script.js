@@ -227,17 +227,15 @@ createApp({
 
       // FIXME: perché quando ricerco e poi cancello la ricerca non mi resetta tutti i contatti a true? 
 
-      this.contacts.forEach((contact) => {
+      this.contacts.forEach(contact => {
 
-        if(this.searchChat.length === 0){
+        if(contact.name.toLowerCase().includes(this.searchChat.toLowerCase())){
           contact.visible = true
         }else{
-          if(contact.name.toLowerCase().includes(this.searchChat.toLowerCase())){
-            contact.visible = true
-          }else{
-            contact.visible = false
-          }
+          contact.visible = false
         }
+
+        // contact.visible = contact.name.toLowerCase().includes(this.searchChat.toLowerCase())
         
       })
 
