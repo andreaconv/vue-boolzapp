@@ -80,10 +80,10 @@
   
                   <div class="items">
                     <span id="name">{{contact.name}}</span>
-                    <span id="hours">{{contact.messages[contact.messages.length - 1].date}} {{contact.messages[contact.messages.length - 1].time}}</span>
+                    <span v-if="contact.messages.length > 0" id="hours">{{contact.messages[contact.messages.length - 1].date}} {{contact.messages[contact.messages.length - 1].time}}</span>
                   </div>
   
-                  <span id="last-msg">{{contact.messages[contact.messages.length - 1].message}}</span>
+                  <span v-if="contact.messages.length > 0" id="last-msg">{{contact.messages[contact.messages.length - 1].message}}</span>
                   
                 </div>
   
@@ -111,7 +111,12 @@
               
               <div class="details">
                 <div>{{contacts[counter].name}}</div>
-                <span class="status">Ultimo accesso {{contacts[counter].messages[contacts[counter].messages.length - 1].date}} alle {{contacts[counter].messages[contacts[counter].messages.length - 1].time}}</span>
+                <span v-if="contacts[counter].messages.length > 0" class="status">
+                  Ultimo accesso 
+                  {{contacts[counter].messages[contacts[counter].messages.length - 1].date}} 
+                  alle 
+                  {{contacts[counter].messages[contacts[counter].messages.length - 1].time}}
+                </span>
   
               </div>
               
@@ -139,7 +144,7 @@
   
                 <ul v-show="chevron" v-if="messageIndex === i" class="menu">
                   <li>Message info</li>
-                  <li>Delete message</li>
+                  <li @click="removeMsg">Delete message</li>
                 </ul>
                 
                 <span class="hours">{{message.time}}</span>

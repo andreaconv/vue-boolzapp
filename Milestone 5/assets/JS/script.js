@@ -313,6 +313,12 @@ createApp({
         const content = document.querySelector('.content');
         content.scrollTop = content.scrollHeight;
       }, 1);
+    },
+
+    //rimuovere i messaggi
+    removeMsg(){
+      this.contacts[this.counter].messages.splice(this.messageIndex, 1)
+      console.log(this.messageIndex)
     }
 
   },
