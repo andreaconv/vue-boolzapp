@@ -199,25 +199,24 @@ createApp({
       messageIndex: 0,
       chevron: false,
       arrayAnswers: [
-        // 'va bene',
-        // 'daccordo',
-        // 'perfetto',
-        // 'ci sto',
-        // 'benissimo',
-        // 'perché?',
-        // 'non ci siamo',
-        // 'papà?',
-        // 'nonna',
-        // 'stai bene?',
-        // 'non sono daccordo',
-        // 'bello!',
-        // 'pane tostato',
-        // 'barbabietole da zucchero',
-        // 'fotosintesi clorofilliana',
-        // 'industrie siderurgiche',
-        // 'bergamotto',
-        // 'adolescenti',
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor repellat maxime est deleniti, quod doloribus ab? Voluptatibus obcaecati libero quaerat neque id consequatur consequuntur accusamus. Dolor ullam aperiam molestiae repellendus.',
+        'va bene',
+        'daccordo',
+        'perfetto',
+        'ci sto',
+        'benissimo',
+        'perché?',
+        'non ci siamo',
+        'papà?',
+        'nonna',
+        'stai bene?',
+        'non sono daccordo',
+        'bello!',
+        'pane tostato',
+        'barbabietole da zucchero',
+        'fotosintesi clorofilliana',
+        'industrie siderurgiche',
+        'bergamotto',
+        'adolescenti',
       ],
 
     }
@@ -236,6 +235,7 @@ createApp({
           contact.visible = false
         }
 
+        // FIXME: ALTERNATIVA
         // contact.visible = contact.name.toLowerCase().includes(this.searchChat.toLowerCase())
         
       })
@@ -275,8 +275,15 @@ createApp({
         this.contacts[this.counter].messages.push(newMsg);
         this.inputMessage = '';
 
+
         // funzioni richiamate
         this.answer();
+
+        /* FIXME: trovare il modo per far visualizzare gli ultimi messaggi quando se ne inseriscono troppi */
+        setTimeout(() => {
+          const content = document.querySelector('.content');
+          content.scrollTop = content.scrollHeight;
+        }, 1);
 
       }
     },
@@ -290,12 +297,21 @@ createApp({
           // date: '10/01/2020',
           time: this.ora,
           // time: '15:30',
-          message: this.capitalizeFirstLetter(this.arrayAnswers[this.generateNumberRandom(this.arrayAnswers.length - 1, 0)]),
-          //FIXME: la prima funzione mi trasforma la prima lettera in maiuscolo, prendo il messaggio dall'array di risposte con indice random grazie ad un'altra funzione
+          message: this.arrayAnswers[this.generateNumberRandom(this.arrayAnswers.length - 1, 0)],
+          // message: this.capitalizeFirstLetter(this.arrayAnswers[this.generateNumberRandom(this.arrayAnswers.length - 1, 0)]),
+          //FIXME: .capitalizeFirstLetter() mi trasforma la prima lettera in maiuscolo, prendo il messaggio dall'array di risposte con indice random grazie ad un'altra funzione
           // message: 'ok',
           status: 'received'
         }
         this.contacts[this.counter].messages.push(risposta);
+
+        /* FIXME: trovare il modo per far visualizzare gli ultimi messaggi quando se ne inseriscono troppi */
+        setTimeout(() => {
+          const content = document.querySelector('.content');
+          content.scrollTop = content.scrollHeight;
+        }, 1);
+        
+
       }, 1000);
     },
 

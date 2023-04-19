@@ -312,15 +312,14 @@ main .content{
   overflow-y: scroll;
 }
 
-/* TODO: trovare il modo per far visualizzare gli ultimi messaggi quando se ne inseriscono troppi */
-
 main .content .message{
+  text-transform: capitalize;
   max-width: 60%;
   margin: 5px 0;
   padding: 5px 35px 5px 15px;
   position: relative;
   /* FIXME: COME POSSO MANDARE A CAPO UNA PAROLA LUNGHISSIMA CHE MI OCCUPA TANTO SPAZIO E VA OLTRE I LIMITI?  */
-  /* debug */
+  /* TRUNCATE CSS */
   /* white-space: nowrap;
   overflow: hidden;
   text-overflow : ellipsis;

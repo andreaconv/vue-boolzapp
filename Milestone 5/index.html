@@ -126,12 +126,12 @@
           </header>
           
           <!------------------CHAT CENTRALE-------------------->
-          
+
           <div class="content">
             <div
             v-for="(message, i) in contacts[counter].messages"
             :class="message.status"
-            class="message">
+            class="message" :key="i">
   
                 <span>{{message.message}}</span>
   
