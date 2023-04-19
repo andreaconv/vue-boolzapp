@@ -162,9 +162,6 @@ aside .chats-made ul{
 
 aside .chats-made ul li{
   width: 100%;
-}
-
-aside .chats-made ul li .items{
   display: flex;
   height: 100%;
   width: 100%;
@@ -178,38 +175,45 @@ aside .chats-made ul li.active{
   background-color: #d8d8d8;
 }
 
-aside .chats-made ul li .items:hover{
+aside .chats-made ul li:hover{
   background-color: #fafafa;
 }
 
-aside .chats-made ul li .items .image{
+aside .chats-made ul li .image{
   height: 50px;
   margin-right: 15px;
 }
 
-aside .chats-made ul li .items .image img{
+aside .chats-made ul li .image img{
   height: 100%;
   border-radius: 50%;
 }
 
-aside .chats-made ul li .items .user{
+aside .chats-made ul li .user{
   display: flex;
   flex-direction: column;
   width: 100%;
-  position: relative;
-  background-color: yellowgreen;
 }
 
-aside .chats-made ul li .user span#hours{
-  content: "";
-  position: absolute;
-  top:0;
-  right: 0;
+aside .chats-made ul li .user .items{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* TODO: trovare una soluzione per non far scomparire l'orario quando si rimpicciolisce la pagina */
+
+aside .chats-made ul li .user .items span#name{
+  /* background-color: green; */
+  /* flex-shrink: 0; */
+}
+
+aside .chats-made ul li .user .items span#hours{
   font-size: .55rem;
   color: gray;
+  /* background-color: yellowgreen; */
 }
 
-aside .chats-made ul li .user span:last-child{
+aside .chats-made ul li .user span#last-msg{
   color: gray;
   font-size: .7rem;
   margin-top: 3px;

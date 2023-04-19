@@ -70,19 +70,21 @@
               @click="counter = index"
               :class="{'active' : index === counter}">
 
-              <div class="items">
-                <!-- contenitore che si visualizza se il contatto è true  -->
-
-                <div class="image">
-                  <img :src="contact.avatar">
-                </div>
-                <div class="user">
-                  <span id="hours">{{contact.messages[contact.messages.length - 1].date}} {{contact.messages[contact.messages.length - 1].time}}</span>
-                  <span>{{contact.name}}</span>
-                  <span>{{contact.messages[contact.messages.length - 1].message}}</span>
-                </div>
-
+              <div class="image">
+                <img :src="contact.avatar">
               </div>
+
+              <div class="user">
+
+                <div class="items">
+                  <span id="name">{{contact.name}}</span>
+                  <span id="hours">{{contact.messages[contact.messages.length - 1].date}} {{contact.messages[contact.messages.length - 1].time}}</span>
+                </div>
+
+                <span id="last-msg">{{contact.messages[contact.messages.length - 1].message}}</span>
+                
+              </div>
+
             </li>
 
           </ul>
