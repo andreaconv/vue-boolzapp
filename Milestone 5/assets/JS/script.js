@@ -51,8 +51,11 @@ createApp({
 
     // genera l'ora e la data attuale 
     printClock() {
-      this.data = dt.now().toLocaleString(dt.DATE_SHORT)
-      this.ora = dt.now().toLocaleString(dt.TIME_24_SIMPLE)
+      // this.data = dt.now().toLocaleString(dt.DATE_SHORT)
+      // this.ora = dt.now().toLocaleString(dt.TIME_24_SIMPLE)
+      // FIXME: ALTERNATIVA più compatta
+      this.data = dt.now().toFormat("D")
+      this.ora = dt.now().toFormat("t")
     },
     //genera un numero random
     generateNumberRandom(max, min) {
