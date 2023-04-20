@@ -39,7 +39,10 @@ createApp({
           contact.visible = false
         }
 
-        // FIXME: ALTERNATIVA
+        // FIXME: ALTERNATIVA sempre dentro al ciclo!
+        /* DESCRIZIONE: cosa fa?
+         * contact.visible è true soltanto quando contact.name incule le lettere inserite nel campo input, per fare un controllo più accurato si trasformano entrambi in minuscolo con .toLowerCase())
+         */
         // contact.visible = contact.name.toLowerCase().includes(this.searchChat.toLowerCase())
         
       })
@@ -57,6 +60,7 @@ createApp({
     },
 
     //FIXME: capitalizeFirstLetter() mi trasforma la prima lettera in maiuscolo
+    // non l'ho utilizzata perché ho aggiunto semplicemente "text-transform: capitalize;" al CSS del messaggio
     capitalizeFirstLetter(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
     },
@@ -73,7 +77,6 @@ createApp({
           date: this.data,
           time: this.ora,
           message: this.inputMessage,
-          // message: this.capitalizeFirstLetter(this.inputMessage),
           status: 'sent'
         }
         this.contacts[this.counter].messages.push(newMsg);
@@ -95,7 +98,6 @@ createApp({
           date: this.data,
           time: this.ora,
           message: this.arrayAnswers[this.generateNumberRandom(this.arrayAnswers.length - 1, 0)],
-          // message: this.capitalizeFirstLetter(this.arrayAnswers[this.generateNumberRandom(this.arrayAnswers.length - 1, 0)]),
           status: 'received'
         }
         this.contacts[this.counter].messages.push(risposta);
