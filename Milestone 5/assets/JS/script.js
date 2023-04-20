@@ -1,5 +1,5 @@
 import contacts from './db.js'
-import contacts from './db.js'
+// import arrayAnswers from './db.js'
 
 const { createApp } = Vue;
 
@@ -91,10 +91,9 @@ createApp({
       } else {
         const newMsg = {
           date: this.data,
-          // date: '10/01/2020',
           time: this.ora,
-          // time: '15:30',
-          message: this.capitalizeFirstLetter(this.inputMessage),
+          message: this.inputMessage,
+          // message: this.capitalizeFirstLetter(this.inputMessage),
           status: 'sent'
         }
         this.contacts[this.counter].messages.push(newMsg);
