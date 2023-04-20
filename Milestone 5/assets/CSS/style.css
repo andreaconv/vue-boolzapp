@@ -215,15 +215,23 @@ aside .chats-made ul li .user .items{
 
 /* TODO: trovare una soluzione per non far scomparire l'orario quando si rimpicciolisce la pagina */
 
+/* debug */
 /* aside .chats-made ul li .user .items span#name{
   background-color: green;
   flex-shrink: 0;
+  flex: 0 0 auto;
+  max-width: 100px;
 } */
+  /* debug */
 
 aside .chats-made ul li .user .items span#hours{
+  text-align: end;
   font-size: .55rem;
   color: gray;
-  /* background-color: yellowgreen; */
+  /* debug */
+  /* flex: 0 1 100px;
+  min-width: 100px;
+  background-color: yellowgreen; */
 }
 
 aside .chats-made ul li .user span#last-msg{
@@ -365,6 +373,19 @@ main .content .message ul li{
 
 main .content .message ul li:hover{
   background-color: white;
+}
+
+main .content .message span.info{
+  position: absolute;
+  top: 100%;
+  right: 8px;
+  font-size: .55rem;
+  padding: 5px;
+  border-radius: 5px;
+  color: black;
+  z-index: 1;
+  /* debug */
+  background-color: var(--heavenly);
 }
 
 main .content .message span.hours{

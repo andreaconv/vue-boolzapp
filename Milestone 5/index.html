@@ -18,9 +18,11 @@
 </head>
 <body>
 
+  <!-- TODO: dividere il codice in più file CSS e SCRIPT  -->
+
   <div id="app">
 
-    <div @click="chevron = false" class="main-wrapper">
+      <div @click="chevron = false, info = false" class="main-wrapper">
 
       <div class="container">
 
@@ -80,10 +82,19 @@
   
                   <div class="items">
                     <span id="name">{{contact.name}}</span>
-                    <span v-if="contact.messages.length > 0" id="hours">{{contact.messages[contact.messages.length - 1].date}} {{contact.messages[contact.messages.length - 1].time}}</span>
+                    <span
+                      v-if="contact.messages.length > 0"
+                      id="hours">
+                      {{contact.messages[contact.messages.length - 1].date}}
+                      {{contact.messages[contact.messages.length - 1].time}}
+                    </span>
                   </div>
   
-                  <span v-if="contact.messages.length > 0" id="last-msg">{{contact.messages[contact.messages.length - 1].message}}</span>
+                  <span 
+                    v-if="contact.messages.length > 0" 
+                    id="last-msg">
+                    {{contact.messages[contact.messages.length - 1].message}}
+                  </span>
                   
                 </div>
   
@@ -111,7 +122,9 @@
               
               <div class="details">
                 <div>{{contacts[counter].name}}</div>
-                <span v-if="contacts[counter].messages.length > 0" class="status">
+                <span 
+                  v-if="contacts[counter].messages.length > 0" 
+                  class="status">
                   Ultimo accesso 
                   {{contacts[counter].messages[contacts[counter].messages.length - 1].date}} 
                   alle 
@@ -132,20 +145,27 @@
           
           <!------------------CHAT CENTRALE-------------------->
 
+
+          <!-- FIXME: perchè nel ciclo il parametro "MESSAGE" prende message dell'array messages? e non date oppure status? -->
           <div class="content">
             <div
             v-for="(message, i) in contacts[counter].messages"
             :class="message.status"
             class="message" :key="i">
-  
+
                 <span>{{message.message}}</span>
   
                 <span><i @click.stop="chevron = !chevron, messageIndex = i" class="fa-solid fa-chevron-down"></i></span>
+
+                <!-- TODO: aggiustare la visualizzazione delle info, mettere la data appropriata del messaggio e visualizzare solo quello -->
+                <!-- FIXME: quando clicco su un'altra chevron si aprono automaticamente le informazioni -->
   
-                <ul v-show="chevron" v-if="messageIndex === i" class="menu">
-                  <li>Message info</li>
-                  <li @click="removeMsg">Delete message</li>
+                <ul v-show="chevron && !info" v-if="messageIndex === i">
+                  <li @click.stop="info = !info">Message info</li>
+                  <li @click="removeMsg(i)">Delete message</li>
                 </ul>
+
+                <span v-show="info" v-if="messageIndex === i" class="info">{{message.date}}</span>
                 
                 <span class="hours">{{message.time}}</span>
               </div>

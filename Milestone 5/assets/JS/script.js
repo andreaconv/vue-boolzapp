@@ -198,6 +198,7 @@ createApp({
       searchChat: "",
       messageIndex: 0,
       chevron: false,
+      info:false,
       arrayAnswers: [
         'va bene',
         'daccordo',
@@ -217,6 +218,7 @@ createApp({
         'industrie siderurgiche',
         'bergamotto',
         'adolescenti',
+        // 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad blanditiis porro nisi aperiam. Possimus nobis veritatis reprehenderit distinctio libero voluptatem. Dicta tempora iste blanditiis nostrum similique quam, quas harum porro.',
       ],
 
     }
@@ -316,10 +318,17 @@ createApp({
     },
 
     //rimuovere i messaggi
-    removeMsg(){
-      this.contacts[this.counter].messages.splice(this.messageIndex, 1)
-      console.log(this.messageIndex)
-    }
+    removeMsg(indice){
+      this.contacts[this.counter].messages.splice(indice, 1)
+      // FIXME: ALTERNATIVA con un counter "messageIndex" che mi prende l'indice del messaggio
+      // this.contacts[this.counter].messages.splice(this.messageIndex, 1)
+    },
+
+    //funzione abbinata alle info da visualizzare
+    // showInfo(){
+    //   this.info = !this.info;
+    //   console.log("informazioni")
+    // }
 
   },
   
