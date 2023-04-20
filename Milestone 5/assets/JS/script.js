@@ -1,5 +1,5 @@
 import contacts from './db.js'
-// import arrayAnswers from './db.js'
+import arrayAnswers from './answers.js'
 
 const { createApp } = Vue;
 
@@ -12,6 +12,7 @@ createApp({
     return {
 
       contacts, 
+      arrayAnswers,
       counter: 0,
       inputMessage: '',
       data: null,
@@ -20,27 +21,6 @@ createApp({
       messageIndex: 0,
       chevron: false,
       info:false,
-      arrayAnswers: [
-        'va bene',
-        'daccordo',
-        'perfetto',
-        'ci sto',
-        'benissimo',
-        'perché?',
-        'non ci siamo',
-        'papà?',
-        'nonna',
-        'stai bene?',
-        'non sono daccordo',
-        'bello!',
-        'pane tostato',
-        'barbabietole da zucchero',
-        'fotosintesi clorofilliana',
-        'industrie siderurgiche',
-        'bergamotto',
-        'adolescenti',
-        // 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad blanditiis porro nisi aperiam. Possimus nobis veritatis reprehenderit distinctio libero voluptatem. Dicta tempora iste blanditiis nostrum similique quam, quas harum porro.',
-      ],
 
     }
 
