@@ -10,13 +10,10 @@ body {
   width: 100vw;
 }
 
-/* TODO: CAMBIARE I NOMI ALLE TONALITÀ DEL GRIGIO  */
-
 :root {
   --green: #009688;
   --light-gray: #a3a3a3; /* sfondo esterno */
   --gray: #b1b1b1; /* testo icone */
-  /* --DARK-gray: #b1b1b1; */
   --white: #ebebeb; /* sfondo generale*/
   --height-user: 60px;
   --heavenly: #8edafc; /* sfondo notifiche*/
@@ -29,11 +26,6 @@ i{
 #app {
   height: 100%;
   width: 100%;
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  background-image: linear-gradient(var(--green) 15%, var(--light-gray) 15%); */
 }
 
 .main-wrapper{
@@ -180,7 +172,6 @@ aside .chats-made ul li{
   width: 100%;
   padding: 10px 15px;
   background-color: var(--white);
-  /* position: relative; */
   border-bottom: 1px solid var(--light-gray);
 }
 
