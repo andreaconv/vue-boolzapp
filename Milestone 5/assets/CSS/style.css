@@ -10,6 +10,8 @@ body {
   width: 100vw;
 }
 
+/* TODO: dividere il file CSS in 2: aside e main */
+
 :root {
   --green: #009688;
   --light-gray: #a3a3a3; /* sfondo esterno */
@@ -302,6 +304,8 @@ main header .icons i{
 
 /* ------------------CONTENT------------------- */
 
+/* FIXME: una alternativa per i messaggi poteva essere creare delle row all'interno del content per ogni messaggio a cui dare il clearfix e al suo interno inserire il vero messaggio che avrebbe avuto float left or right a seconda della classe */
+
 main .content{
   display: flex;
   flex-direction: column;
@@ -320,13 +324,13 @@ main .content .message{
   margin: 5px 0;
   padding: 5px 35px 5px 15px;
   position: relative;
-  /* FIXME: COME POSSO MANDARE A CAPO UNA PAROLA LUNGHISSIMA CHE MI OCCUPA TANTO SPAZIO E VA OLTRE I LIMITI?  */
-  word-wrap: break-word;
-  /* TRUNCATE CSS */
+  /* TRUNCATE CSS ?????*/
   /* white-space: nowrap;
   overflow: hidden;
   text-overflow : ellipsis;
   display: block; */
+  /* FIXME: COME POSSO MANDARE A CAPO UNA PAROLA LUNGHISSIMA CHE MI OCCUPA TANTO SPAZIO E VA OLTRE I LIMITI?  */
+  word-wrap: break-word;
 }
 
 main .content .message span i{
