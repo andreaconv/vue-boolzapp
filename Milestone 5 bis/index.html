@@ -145,16 +145,13 @@
           
           <!------------------CHAT CENTRALE-------------------->
 
-
-          <!-- FIXME: perchè nel ciclo il parametro "MESSAGE" prende message dell'array messages? e non date oppure status? -->
           <div class="content">
             <div
-            v-for="(message, i) in contacts[counter].messages"
-            :class="message.status"
-            class="message clearfix" :key="i">
+            v-for="(obj, i) in contacts[counter].messages"
+            class="row" :key="i">
 
-              <div :class="message.status" class="row">
-                <span>{{message.message}}</span>
+              <div :class="obj.status" class="message">
+                <span>{{obj.message}}</span>
   
                 <span><i @click.stop="chevron = !chevron, messageIndex = i" class="fa-solid fa-chevron-down"></i></span>
 
@@ -166,9 +163,9 @@
                   <li @click="removeMsg(i)">Delete message</li>
                 </ul>
 
-                <span v-show="info" v-if="messageIndex === i" class="info">{{message.date}}</span>
+                <span v-show="info" v-if="messageIndex === i" class="info">{{obj.date}}</span>
                 
-                <span class="hours">{{message.time}}</span>
+                <span class="hours">{{obj.time}}</span>
               </div>
 
               </div>

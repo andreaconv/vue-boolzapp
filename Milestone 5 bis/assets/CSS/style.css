@@ -316,20 +316,39 @@ main .content{
   scroll-behavior: smooth;
 }
 
-main .content .message{
+main .content .row{
   width: 100%;
 }
 
-main .content .message .row{
+main .content .row .message{
   text-transform: capitalize;
   max-width: 60%;
   margin: 5px 0;
   padding: 5px 35px 5px 15px;
   position: relative;
+  /* FIXME: per non spaccare il contenitore con parole lunghissime */
   word-wrap: break-word;
+  /* FIXME: per bloccare la riga da un solo messsagio */
+  clear: both;
 }
 
-main .content .message span i{
+/* ---------MESSAGGIO INVIATO------ */
+main .content .row .message.sent{
+  border-radius: 10px 10px 0 10px;
+  background-color: #d5f9ba;  
+  float: right;
+}
+
+/* --------MESSAGGIO RICEVUTO------ */
+main .content .row .message.received{
+  border-radius: 10px 10px 10px 0;
+  background-color: white;
+  float: left;
+}
+
+/* -----DETTAGLI DEL MESSAGGIO------ */
+
+main .content .row span i{
   position: absolute;
   top: 4px;
   right: 6px;
@@ -338,11 +357,11 @@ main .content .message span i{
   display: none;
 }
 
-main .content .message:hover span i{
+main .content .row:hover span i{
   display: block;
 }
 
-main .content .message ul{
+main .content .row ul{
   list-style: none;
   font-size: 0.8rem;
   border-radius: 5px;
@@ -356,17 +375,17 @@ main .content .message ul{
   z-index: 1;
 }
 
-main .content .message ul li{
+main .content .row ul li{
   padding: 10px;
   cursor: pointer;
   border-bottom: 1px solid var(--light-gray);
 }
 
-main .content .message ul li:hover{
+main .content .row ul li:hover{
   background-color: white;
 }
 
-main .content .message span.info{
+main .content .row span.info{
   position: absolute;
   top: 100%;
   right: 8px;
@@ -379,7 +398,7 @@ main .content .message span.info{
   background-color: var(--heavenly);
 }
 
-main .content .message span.hours{
+main .content .row span.hours{
   position: absolute;
   bottom: 4px;
   right: 8px;
@@ -387,25 +406,6 @@ main .content .message span.hours{
   color: gray;
 }
 
-main .content .message.clearfix::after{
-  content: '';
-  display: table;
-  clear: both;
-}
-
-/* ---------MESSAGGIO INVIATO------ */
-main .content .message .row.sent{
-  border-radius: 10px 10px 0 10px;
-  background-color: #d5f9ba;  
-  float: right;
-}
-
-/* --------MESSAGGIO RICEVUTO------ */
-main .content .message .row.received{
-  border-radius: 10px 10px 10px 0;
-  background-color: white;
-  float: left;
-}
 
 /* ------------------FOOTER------------------- */
 
