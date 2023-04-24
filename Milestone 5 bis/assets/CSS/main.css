@@ -1,0 +1,192 @@
+/* ------------------MAIN------------------- */
+
+main{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 65%;
+}
+
+main > *{
+  width: 100%;
+}
+
+/* ------------------HEADER------------------- */
+
+main header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 100%;
+  height: var(--height-user);
+  background-color: var(--white);
+  padding: 0 10px;
+  border-left: 1px solid var(--light-gray);
+}
+
+main header .user{
+  display: flex;
+}
+
+main header .user .avatar{
+  width: 40px;
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+main header .user .avatar img{
+  width: 100%;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+main header .user .details{
+  padding: 5px 0;
+  font-size: .8rem;
+}
+
+main header .user .details .status{
+  color: gray;
+  font-size: .7rem;
+  margin-top: 3px;
+}
+
+main header .icons i{
+  color: var(--gray);
+  margin: 0 10px;
+  font-size: 1.1rem;
+}
+
+/* ------------------CONTENT------------------- */
+
+/* FIXME: una alternativa per i messaggi: ho creato delle row all'interno del content per ogni messaggio a cui dare il clearfix e al suo interno ho inserito il vero messaggio che ha float left or right a seconda della classe */
+
+main .content{
+  background-image: url(../IMG/mine.jpg);
+  height: 100%;
+  width: 100%;
+  padding: 40px 70px;
+  overflow-y: scroll;
+  /* FIXME: SCROLLA LENTAMENTE */
+  scroll-behavior: smooth;
+}
+
+main .content .row{
+  width: 100%;
+}
+
+main .content .row .message{
+  text-transform: capitalize;
+  max-width: 60%;
+  margin: 5px 0;
+  padding: 5px 35px 5px 15px;
+  position: relative;
+  /* FIXME: per non spaccare il contenitore con parole lunghissime */
+  word-wrap: break-word;
+  /* FIXME: per bloccare la riga da un solo messsagio */
+  clear: both;
+}
+
+/* ---------MESSAGGIO INVIATO------ */
+main .content .row .message.sent{
+  border-radius: 10px 10px 0 10px;
+  background-color: #d5f9ba;  
+  float: right;
+}
+
+/* --------MESSAGGIO RICEVUTO------ */
+main .content .row .message.received{
+  border-radius: 10px 10px 10px 0;
+  background-color: white;
+  float: left;
+}
+
+/* -----DETTAGLI DEL MESSAGGIO------ */
+
+main .content .row span i{
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  font-size: 0.6rem;
+  color: gray;
+  display: none;
+}
+
+main .content .row:hover span i{
+  display: block;
+}
+
+main .content .row ul{
+  list-style: none;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 110px;
+  box-shadow: 2px 2px 5px var(--gray);
+  background-color: var(--white);
+  position: absolute;
+  top: 14px;
+  right: 6px;
+  z-index: 1;
+}
+
+main .content .row ul li{
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+main .content .row ul li:hover{
+  background-color: white;
+}
+
+main .content .row span.info{
+  position: absolute;
+  top: 100%;
+  right: 8px;
+  font-size: .55rem;
+  padding: 5px;
+  border-radius: 5px;
+  color: black;
+  z-index: 1;
+  /* debug */
+  background-color: var(--heavenly);
+}
+
+main .content .row span.hours{
+  position: absolute;
+  bottom: 4px;
+  right: 8px;
+  font-size: .55rem;
+  color: gray;
+}
+
+
+/* ------------------FOOTER------------------- */
+
+main footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 100%;
+  height: var(--height-user);
+  background-color: var(--white);
+  padding: 0 30px;
+  border-left: 1px solid var(--light-gray);
+  color: gray;
+}
+
+main footer i{
+  font-size: 1.1rem;
+}
+
+main footer input{
+  width: 100%;
+  margin: 0 15px;
+  padding: 7px 5px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
