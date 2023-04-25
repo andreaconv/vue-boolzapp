@@ -21,7 +21,7 @@ createApp({
       messageIndex: 0,
       chevron: false,
       info:false,
-
+      randomAnswer: null,
     }
 
   },
@@ -96,19 +96,32 @@ createApp({
 
     // genera la risposta 
     answer() {
+
+      // funzione richiamata
+      this.getApi();
+
       setTimeout(() => {
         const risposta = {
           date: this.data,
           time: this.ora,
-          message: this.arrayAnswers[this.generateNumberRandom(this.arrayAnswers.length - 1, 0)],
+          // message: this.arrayAnswers[this.generateNumberRandom(this.arrayAnswers.length - 1, 0)],
+          message: this.randomAnswer,
           status: 'received'
         }
         this.contacts[this.counter].messages.push(risposta);
       
-        // funzioni richiamata
+        // funzione richiamata
         this.scrollContent();
         
       }, 1000);
+    },
+
+    //Novità: richiamo una API per generare una frase random
+    getApi(){
+      axios.get("https://flynn.boolean.careers/exercises/api/random/sentence")
+      .then(result => {
+        this.randomAnswer = result.data.response;
+      })
     },
 
     /* FIXME: questa funzione visualizzara gli ultimi messaggi quando se ne inseriscono troppi */

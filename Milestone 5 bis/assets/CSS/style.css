@@ -10,7 +10,7 @@ body {
   width: 100vw;
 }
 
-/* TODO: dividere il file CSS in 2: aside e main */
+/* TODO: crare una scala di grigio da aggiungere alle parti della chat */
 
 :root {
   --green: #009688;
