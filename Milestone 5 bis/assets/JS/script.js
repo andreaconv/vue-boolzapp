@@ -22,6 +22,7 @@ createApp({
       chevron: false,
       info:false,
       randomAnswer: null,
+      language: false
     }
 
   },
@@ -41,7 +42,7 @@ createApp({
 
         // FIXME: ALTERNATIVA sempre dentro al ciclo!
         /* DESCRIZIONE: cosa fa?
-         * contact.visible è true soltanto quando contact.name incule le lettere inserite nel campo input, per fare un controllo più accurato si trasformano entrambi in minuscolo con .toLowerCase())
+         * contact.visible è true soltanto quando contact.name include la stringa inserita nel campo input, per fare un controllo più accurato si trasformano entrambi in minuscolo con .toLowerCase())
          */
         // contact.visible = contact.name.toLowerCase().includes(this.searchChat.toLowerCase())
         
@@ -104,8 +105,9 @@ createApp({
         const risposta = {
           date: this.data,
           time: this.ora,
-          // message: this.arrayAnswers[this.generateNumberRandom(this.arrayAnswers.length - 1, 0)],
-          message: this.randomAnswer,
+          message: this.language
+              ? this.randomAnswer
+              : this.arrayAnswers[this.generateNumberRandom(this.arrayAnswers.length - 1, 0)],
           status: 'received'
         }
         this.contacts[this.counter].messages.push(risposta);

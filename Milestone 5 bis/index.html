@@ -138,6 +138,15 @@
               </div>
               
             </div>
+
+            <div>
+              <span>Scegli la lingua <i class="fa-solid fa-arrow-right"></i></span>
+              <span
+                id="language"
+                @click="language = !language"
+                v-html="language ? 'Latino' : 'Italiano'"
+                ></span>
+            </div>
             
             <div class="icons">
               <i class="fa-solid fa-magnifying-glass"></i>

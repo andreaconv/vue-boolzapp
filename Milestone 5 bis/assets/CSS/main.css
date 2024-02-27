@@ -53,6 +53,15 @@ main header .user .details .status{
   margin-top: 3px;
 }
 
+main header div span#language{
+  margin-left: 1rem;
+  color: red;
+  cursor: pointer;
+}
+main header div span#language:hover{
+  text-decoration: underline;
+}
+
 main header .icons i{
   color: var(--gray);
   margin: 0 10px;
